@@ -14,6 +14,7 @@ public interface UserService {
 
     public Iterable<User> findAll();
 
+    public Optional<User> findByEmail(String email);
 
 
 }

@@ -22,6 +22,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody User user){
+
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
     }
 
@@ -35,6 +36,15 @@ public class UserController {
         }
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<?> read(@PathVariable String email){
+        Optional<User> oUser=userService.findByEmail(email);
+        if(oUser.isPresent()){
+            return ResponseEntity.ok(oUser);
+        }else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){

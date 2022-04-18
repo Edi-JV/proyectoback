@@ -14,6 +14,11 @@ public class UserServiceImp implements UserService{
     @Autowired
     private UserRepository userRepository;
 
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
     @Override
     @Transactional(readOnly = true)

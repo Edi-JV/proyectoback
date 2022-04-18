@@ -35,7 +35,6 @@ public class ProductController {
         }else {
             return ResponseEntity.notFound().build();
         }
-
     }
 
     @PutMapping("/{id}")
