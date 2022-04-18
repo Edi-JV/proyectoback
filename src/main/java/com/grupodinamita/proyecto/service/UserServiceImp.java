@@ -14,28 +14,12 @@ public class UserServiceImp implements UserService{
     @Autowired
     private UserRepository userRepository;
 
+
     @Override
     @Transactional(readOnly = true)
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
     }
-
-    @Override
-    @Transactional
-    public Optional<User> findByEmail(String email){
-        return userRepository.findByEmail(email);
-    }
-
-
-    @Override
-    @Transactional
-    public Optional<User> findByRol(String rol){
-        return userRepository.findByEmail(rol);
-    }
-
-    @Transactional
-    public boolean existsByEmail(String email){
-        return userRepository.existsByEmail(email);}
 
     @Override
     @Transactional

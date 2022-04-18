@@ -6,10 +6,6 @@ import java.util.Optional;
 
 public interface UserService {
 
-    public Optional<User> findByEmail(String email);
-
-    public Optional<User> findByRol(String rol);
-
     public Optional<User> findById(Long id);
 
     void deleteById(Long id);

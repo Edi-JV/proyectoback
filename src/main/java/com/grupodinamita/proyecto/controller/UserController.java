@@ -35,25 +35,6 @@ public class UserController {
         }
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<?> findByEmail(@PathVariable String email){
-        Optional<User> oUser=userService.findByEmail(email);
-        if(oUser.isPresent()){
-            return ResponseEntity.ok(oUser);
-        }else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @GetMapping("/{rol}")
-    public ResponseEntity<?> findByRol(@PathVariable String rol){
-        Optional<User> oUser=userService.findByRol(rol);
-        if(oUser.isPresent()){
-            return ResponseEntity.ok(oUser);
-        }else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){
