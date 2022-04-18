@@ -28,7 +28,7 @@ public class Product implements Serializable {
 
     private Double price;
 
-    private int cantidad;
+    private Long id_categoria;
 
     private String urlFoto;
 }
