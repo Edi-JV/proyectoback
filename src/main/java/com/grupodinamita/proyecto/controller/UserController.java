@@ -36,15 +36,6 @@ public class UserController {
         }
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<?> read(@PathVariable String email){
-        Optional<User> oUser=userService.findByEmail(email);
-        if(oUser.isPresent()){
-            return ResponseEntity.ok(oUser);
-        }else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody User user, @PathVariable Long id){
