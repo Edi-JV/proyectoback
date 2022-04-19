@@ -42,6 +42,9 @@ public class ProductController {
         Optional<Product> oUser= productService.findById(id);
         if(oUser.isPresent()){
             oUser.get().setName(product.getName());
+            oUser.get().setDescription(product.getDescription());
+            oUser.get().setPrice(product.getPrice());
+            oUser.get().setId_categoria(product.getId_categoria());
             return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(oUser.get()));
         }else {
             return ResponseEntity.notFound().build();

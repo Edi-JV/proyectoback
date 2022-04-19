@@ -21,7 +21,9 @@ public class Detalle implements Serializable {
     private Long id;
 
     private String nombre_categoria;
+
     private int cantidad;
+
     private double preciounitario;
 
     private double subtotal;
