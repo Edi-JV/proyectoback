@@ -23,6 +23,8 @@ public class CreacionDeFacturaCompleta {
 
     @Autowired
     private DetalleService detalleService;
+
+    @Autowired
     private EncabezadoService encabezadoService;
 
     @PostMapping("/detalle")
